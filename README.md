@@ -55,9 +55,7 @@ The binary `binaries/20220617-commit-78425d7e74/build_with_fedora_build_flags/ru
 ```
 $ annocheck binaries/20220617-commit-78425d7e74/build_with_fedora_build_flags/ruby
 annocheck: Version 10.73.
-Hardened: ruby: FAIL: run-path test because the DT_RPATH/DT_RUNPATH dynamic tag contains a path that does not start with /usr 
-Hardened: Rerun annocheck with --verbose to see more information on the tests.
-Hardened: ruby: Overall: FAIL.
+Hardened: ruby: PASS.
 ```
 
 The binary  `binaries/20220617-commit-78425d7e74/build_with_minimal_flags/ruby` was built with minimal build flags with `build_with_minimal_flags.sh`.
@@ -65,7 +63,6 @@ The binary  `binaries/20220617-commit-78425d7e74/build_with_minimal_flags/ruby` 
 ```
 $ annocheck binaries/20220617-commit-78425d7e74/build_with_minimal_flags/ruby
 annocheck: Version 10.73.
-Hardened: ruby: FAIL: run-path test because the DT_RPATH/DT_RUNPATH dynamic tag contains a path that does not start with /usr 
 Hardened: ruby: MAYB: test: notes because not all of the .text section is covered by notes 
 Hardened: ruby: FAIL: pie test because not built with '-Wl,-pie' 
 Hardened: Rerun annocheck with --verbose to see more information on the tests.
@@ -74,7 +71,6 @@ Hardened: ruby: Overall: FAIL.
 
 Here are documents printed by `annocheck --verbose [binary]`.
 
-* https://sourceware.org/annobin/annobin.html/Test-run-path.html
 * https://sourceware.org/annobin/annobin.html/Test-notes.html
 * https://sourceware.org/annobin/annobin.html/Test-pie.html
 
