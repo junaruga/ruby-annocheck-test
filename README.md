@@ -123,3 +123,12 @@ ruby*
 
 $ cp -p ruby ~/git/ruby-annocheck-test/binaries/20220617-commit-78425d7e74/build_with_minimal_flags/
 ```
+
+## GCC specs files
+
+In the `build_with_fedora_build_flags.sh`, the `gcc -specs=file` options are used. I copied the specs files to `gcc_specs/`. The files are managed in the [redhat-rpm-config](https://src.fedoraproject.org/rpms/redhat-rpm-config/tree/rawhide) RPM package. I tested with the files in the `redhat-rpm-config` RPM version below.
+
+```
+$ rpm -q redhat-rpm-config
+redhat-rpm-config-220-1.fc36.noarch
+```
