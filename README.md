@@ -38,19 +38,9 @@ $ rpm -qf /bin/annocheck
 annobin-annocheck-10.73-1.fc36.x86_64
 ```
 
-There are 2 `ruby` binnary files.
+There are `ruby` binnary files under `binaries` directory.
 
-```
-$ tree binaries/
-binaries/
-└── 20220617-commit-78425d7e74
-    ├── build_with_fedora_build_flags
-    │   └── ruby
-    └── build_with_minimal_flags
-        └── ruby
-```
-
-The binary `binaries/20220617-commit-78425d7e74/build_with_fedora_build_flags/ruby` was built with Fedora Ruby's build flags with `build_with_fedora_build_flags.sh`.
+The binary `ruby` below was built with Fedora Ruby's build flags with `build_with_fedora_build_flags.sh`.
 
 ```
 $ annocheck binaries/20220617-commit-78425d7e74/build_with_fedora_build_flags/ruby
@@ -58,7 +48,7 @@ annocheck: Version 10.73.
 Hardened: ruby: PASS.
 ```
 
-The binary  `binaries/20220617-commit-78425d7e74/build_with_minimal_flags/ruby` was built with minimal build flags with `build_with_minimal_flags.sh`.
+The binary `ruby` below was built with minimal build flags with `build_with_minimal_flags.sh`.
 
 ```
 $ annocheck binaries/20220617-commit-78425d7e74/build_with_minimal_flags/ruby
@@ -69,9 +59,18 @@ Hardened: Rerun annocheck with --verbose to see more information on the tests.
 Hardened: ruby: Overall: FAIL.
 ```
 
+The binary `ruby` was built with updated minimal build flags with `build_with_minimal_flags.sh` with `-Wa,--generate-missing-build-notes=yes`.
+
+```
+$ annocheck binaries/20220620-commit-c46824d094/build_with_minimal_flags/ruby
+annocheck: Version 10.76.
+Hardened: ruby: FAIL: pie test because not built with '-Wl,-pie' 
+Hardened: Rerun annocheck with --verbose to see more information on the tests.
+Hardened: ruby: Overall: FAIL.
+```
+
 Here are documents printed by `annocheck --verbose [binary]`.
 
-* https://sourceware.org/annobin/annobin.html/Test-notes.html
 * https://sourceware.org/annobin/annobin.html/Test-pie.html
 
 ## How did I prepared the binaries
