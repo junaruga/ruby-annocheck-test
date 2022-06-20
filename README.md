@@ -31,14 +31,14 @@ This repository is to check [Ruby](https://github.com/ruby/ruby) by [annocheck](
 
 ## Test by annocheck
 
-Use the `annocheck` below.
+There are `ruby` binnary files under `binaries` directory.
+
+Used the `annocheck` version below.
 
 ```
 $ rpm -qf /bin/annocheck
 annobin-annocheck-10.73-1.fc36.x86_64
 ```
-
-There are `ruby` binnary files under `binaries` directory.
 
 The binary `ruby` below was built with Fedora Ruby's build flags with `build_with_fedora_build_flags.sh`.
 
@@ -57,6 +57,13 @@ Hardened: ruby: MAYB: test: notes because not all of the .text section is covere
 Hardened: ruby: FAIL: pie test because not built with '-Wl,-pie' 
 Hardened: Rerun annocheck with --verbose to see more information on the tests.
 Hardened: ruby: Overall: FAIL.
+```
+
+Used the `annocheck` version below as I upgraded the RPM package.
+
+```
+$ rpm -qf /bin/annocheck
+annobin-annocheck-10.76-1.fc36.x86_64
 ```
 
 The binary `ruby` was built with updated minimal build flags with `build_with_minimal_flags.sh` with `-Wa,--generate-missing-build-notes=yes`.
